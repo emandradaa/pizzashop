@@ -1,0 +1,18 @@
+{% extends "pizza/base_generic.html" %}
+
+{% block content%}
+    <h1> Pizza: {{ pizza.name }} <img src="{{ pizza.image.url }}" /></h1>
+   
+<ul>
+    {% for ingredient in pizza.ingredients.all %}
+    <li>
+        {{ ingredient.name}} - {{ ingredient.price}} €
+    </li>
+    {% endfor %}
+</ul>
+
+<form method="POST" action="{% url 'pizza:delete-pizza' pizza.id %}">
+   {% csrf_token %}<input type="submit" value="Delete">
+</form>
+
+{% endblock %}

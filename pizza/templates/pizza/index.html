@@ -1,0 +1,21 @@
+<h1>{{ nombre_curso }} </h1>
+{% if all_pizzas %}
+    <ul>
+        {% for pizza in all_pizzas %} 
+           <!-- <li><a href="/pizza/{{pizza.id}}"> {{pizza.name}}</a></li> -->
+           <li><a href="{% url 'pizza:detail' pizza.id%}"> {{pizza.name}}</a></li> 
+           
+            {% endfor %}
+    <p>You have visited this page {{ num_visits }}
+        {% if num_visits == 1 %}
+        time
+        {% else %}
+        times
+        {% endif %}
+    </p>
+    </ul>
+
+{% else %}
+    <h3> No Pizzas left </h3>
+{% endif %}
+

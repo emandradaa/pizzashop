@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    {% block title %} Create new account {% endblock %}    
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resgistro</title>
+</head>
+<body>
+    <h3>Register for an Account</h3>
+    {% block content %}
+        <form action="", method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'pizza/form-template.html' %}
+            <button type="submit">Submit</button>
+        </form>
+    {% endblock %}
+</body>
+</html>

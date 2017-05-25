@@ -1,0 +1,11 @@
+{% extends "pizza/base_generic.html" %}
+
+{% block content%}
+    <h1> Ingrediente: {{ pizza.name }} <img src="{{ pizza.image }}" /></h1>
+   
+<ul>
+    <li>
+        {{ ingredient.name}} - {{ ingredient.price}} €
+    </li>
+</ul>
+{% endblock %}

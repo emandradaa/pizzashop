@@ -1,0 +1,15 @@
+{% block content%}
+    <h1>Pizza list</h1>
+
+    {% if pizza_list %}
+    <ul>
+        {% for pizza in pizza_list %}
+        <li>
+            <a href="{{ pizza.get_absolute_url }}">{{ pizza.name }} </a>   
+             </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>There are no pizzas left</p>
+    {% endif %}
+{% endblock%}
